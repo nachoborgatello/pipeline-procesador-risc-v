@@ -1,0 +1,12 @@
+
+{ 
+    crc :  1208839185417361929  , 
+    ccp_crc :  0  , 
+    cmdline : " --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_halt_modes_behav xil_defaultlib.tb_halt_modes xil_defaultlib.glbl" , 
+    buildDate : "Nov 14 2025" , 
+    buildTime : "19:37:27" , 
+    linkCmd : "D:\\vivado\\2025.2\\Vivado\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/tb_halt_modes_behav/xsimk.exe\"   \"xsim.dir/tb_halt_modes_behav/obj/xsim_0.win64.obj\" \"xsim.dir/tb_halt_modes_behav/obj/xsim_1.win64.obj\" -L\"D:\\vivado\\2025.2\\Vivado\\lib\\win64.o\" -lxv_simulator_kernel   -lxv_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

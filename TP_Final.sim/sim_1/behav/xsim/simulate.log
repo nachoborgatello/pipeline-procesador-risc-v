@@ -1,0 +1,25 @@
+Time resolution is 1 ps
+============================================
+TEST 1: LOAD + RUN + GET_REGS via UART
+============================================
+[TB] Enviando CMD_LOAD (4 instrucciones)...
+[TB] Programa cargado.
+[TB] Enviando CMD_RESET...
+[TB] Enviando CMD_RUN...
+[TB] Esperando HALT...
+[TB] Pipeline detenido (HALT alcanzado).
+[TB] Enviando CMD_REGS...
+[TB] OK: x0 = 0
+[TB] OK: x1 = 5
+[TB] OK: x2 = 10
+[TB] OK: x3 = 15
+
+============================================
+TEST 2: GET_PC via UART
+============================================
+[TB] PC = 0x00000014
+
+============================================
+TODOS LOS TESTS PASARON
+============================================
+$finish called at time : 323270 ns : File "D:/Facultad/Arquitectura/tps/TP_Final/TP_Final.srcs/sim_1/new/tb_debug_unit.v" Line 218

@@ -1,0 +1,400 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Fri Jun 19 18:58:41 2026
+| Host         : DESKTOP-AQLK3PK running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_level_control_sets_placed.rpt
+| Design       : top_level
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   322 |
+|    Minimum number of control sets                        |   322 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    52 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   322 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |   267 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    49 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               5 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             144 |           52 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             105 |           42 |
+| Yes          | Yes                   | No                     |            3862 |         2107 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------+-------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|       Clock Signal       |                        Enable Signal                        |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------+-------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  u_clk_wiz/inst/clk_out1 |                                                             |                                            |                3 |              5 |         1.67 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/latch_index[0]                                      | u_debug/u_uart_rx/sys_rst                  |                2 |              5 |         2.50 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/state[0]                                            | u_debug/u_uart_rx/sys_rst                  |                3 |              5 |         1.67 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[0][0]                           | u_debug/u_uart_rx/sys_rst                  |                3 |              7 |         2.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_55[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_52[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_40[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_15[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_18[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_42[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_7[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_funct3_reg[0]_rep__2_0[0]     | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_funct3_reg[0]_rep__2_17[0]    | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_funct3_reg[0]_rep__3_6[0]     | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_tx/tx_shift[0]                               | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/o_data[7]_i_1_n_0                         | u_debug/u_uart_rx/sys_rst                  |                1 |              8 |         8.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_funct3_reg[0]_rep__3_5[0]     | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/E[0]                                      | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_0[0]             | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/E[1]                                      | u_debug/u_uart_rx/sys_rst                  |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4]_0[0]                         | u_debug/u_uart_rx/sys_rst                  |                1 |              8 |         8.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4]_1[0]                         | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4][3]                           | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4][2]                           | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4][0]                           | u_debug/u_uart_rx/sys_rst                  |                1 |              8 |         8.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4][1]                           | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_1[0]             | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[4]_0[1]                         | u_debug/u_uart_rx/sys_rst                  |                2 |              8 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_10[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_22[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_35[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_32[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_25[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_38[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_4[0]             | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_40[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_105[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_41[0]            | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_43[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_44[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_121[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_45[0]            | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_100[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_107[0]           | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_16[0]            | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_46[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_47[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_48[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_116[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_20[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_49[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_11[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_14[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_115[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_3[0]             | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_119[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_109[0]           | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_101[0]           | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_106[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_118[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_23[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_24[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_34[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_26[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_36[0]            | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_37[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_42[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_111[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_17[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_39[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_2[0]             | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_108[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_102[0]           | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_104[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_27[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_114[0]           | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_120[0]           | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_28[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_117[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_13[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_31[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_18[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_21[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_19[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_12[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_33[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_103[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_110[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_113[0]           | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_29[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_30[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_15[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_112[0]           | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_73[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_83[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_99[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_93[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_66[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_96[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_64[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_88[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_95[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_97[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[0]_0[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[0]_1[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_71[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_7[0]             | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_79[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_90[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_98[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_52[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_80[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[0]_rep__3_0[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_61[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[0]_rep__3_1[0] | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_72[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_63[0]            | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_69[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_55[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_56[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_74[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_78[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_81[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_68[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_76[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_86[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_87[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_60[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_85[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_91[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_58[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_8[0]             | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_51[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_53[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_75[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_82[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_84[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_9[0]             | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_6[0]             | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_92[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_94[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_65[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_5[0]             | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_50[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[0]_rep_1[0]    | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_89[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_70[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_57[0]            | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_59[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_62[0]            | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_67[0]            | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_54[0]            | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_MemWrite_reg_77[0]            | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[2]_rep__8_1[0] | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[2]_rep__6_0[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_3[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_5[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__3_0[0] | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_0[0] | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_15[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_13[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_8[0]        | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_6[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_0[0]        | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_2[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_10[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_1[0] | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_9[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_3[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_4[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_5[0] | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__5_0[0] | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__5_1[0] | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__5_2[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_16[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_2[0] | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__3_1[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__4_6[0] | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep__5_3[0] | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_0[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_1[0]        | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_2[0]        | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_1[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_rep_2[0]    | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_7[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep_1[0]    | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_12[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_14[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_4[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[3]_11[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[4]_rep_2[0]    | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_10[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_21[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_rep__4_1[0] | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_22[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_23[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_32[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_35[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_38[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_28[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_3[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_12[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_24[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_30[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_39[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_17[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_4[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_rep__4_0[0] | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_rep_3[0]    | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[5]_rep__4_2[0] | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_14[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_16[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_19[0]       | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_13[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_25[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_27[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_2[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_26[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_31[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_34[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_20[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_36[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_11[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_18[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_37[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_15[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_29[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_33[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_10[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_23[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_27[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_51[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_28[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_5[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_24[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_22[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_29[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_4[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_3[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_56[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_44[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_26[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_6[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_48[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_49[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_5[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_7[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_9[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_19[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_9[0]        | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_41[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_11[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_25[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_13[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_47[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_53[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_8[0]        | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_17[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_8[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_30[0]       | u_debug/pipeline_rst                       |                3 |              8 |         2.67 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_45[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_12[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_6[0]        | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_20[0]       | u_debug/pipeline_rst                       |                8 |              8 |         1.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_43[0]       | u_debug/pipeline_rst                       |                7 |              8 |         1.14 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_16[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_46[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_50[0]       | u_debug/pipeline_rst                       |                6 |              8 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[6]_54[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_21[0]       | u_debug/pipeline_rst                       |                5 |              8 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/mem_alu_result_reg[7]_14[0]       | u_debug/pipeline_rst                       |                4 |              8 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/reg_index[0]                                        | u_debug/u_uart_rx/sys_rst                  |                3 |             11 |         3.67 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/tx_valid                                            | u_debug/u_uart_rx/sys_rst                  |                6 |             13 |         2.17 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/state_reg[3][0]                           | u_debug/u_uart_rx/sys_rst                  |                3 |             16 |         5.33 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/clk_count[0]                              | u_debug/u_uart_rx/sys_rst                  |                8 |             16 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/u_uart_rx/mem_count[0]                              | u_debug/u_uart_rx/sys_rst                  |                8 |             29 |         3.62 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_28[0]             | u_debug/pipeline_rst                       |               16 |             32 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/tx_word[0]                                          | u_debug/u_uart_rx/sys_rst                  |               24 |             32 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_25[0]             | u_debug/pipeline_rst                       |               13 |             32 |         2.46 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_27[0]             | u_debug/pipeline_rst                       |               13 |             32 |         2.46 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_11[0]             | u_debug/pipeline_rst                       |               13 |             32 |         2.46 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_3[0]              | u_debug/pipeline_rst                       |               15 |             32 |         2.13 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_5[0]              | u_debug/pipeline_rst                       |               20 |             32 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_26[0]             | u_debug/pipeline_rst                       |               17 |             32 |         1.88 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_if_id_latch/E[0]                               | u_debug/pipeline_rst                       |               10 |             32 |         3.20 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_7[0]              | u_debug/pipeline_rst                       |               24 |             32 |         1.33 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/if_id_write_en                    | u_debug/pipeline_rst                       |               16 |             32 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/E[0]                              | u_debug/pipeline_rst                       |               14 |             32 |         2.29 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_13[0]             | u_debug/pipeline_rst                       |               14 |             32 |         2.29 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_15[0]             | u_debug/pipeline_rst                       |               15 |             32 |         2.13 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_17[0]             | u_debug/pipeline_rst                       |               14 |             32 |         2.29 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_18[0]             | u_debug/pipeline_rst                       |               10 |             32 |         3.20 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_20[0]             | u_debug/pipeline_rst                       |               15 |             32 |         2.13 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_10[0]             | u_debug/pipeline_rst                       |               15 |             32 |         2.13 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_12[0]             | u_debug/pipeline_rst                       |               10 |             32 |         3.20 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_1[0]              | u_debug/pipeline_rst                       |               16 |             32 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_8[0]              | u_debug/pipeline_rst                       |               19 |             32 |         1.68 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_19[0]             | u_debug/pipeline_rst                       |               16 |             32 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_14[0]             | u_debug/pipeline_rst                       |               18 |             32 |         1.78 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_0[0]              | u_debug/pipeline_rst                       |               13 |             32 |         2.46 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_16[0]             | u_debug/pipeline_rst                       |               17 |             32 |         1.88 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_2[0]              | u_debug/pipeline_rst                       |               20 |             32 |         1.60 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_21[0]             | u_debug/pipeline_rst                       |               16 |             32 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_22[0]             | u_debug/pipeline_rst                       |               15 |             32 |         2.13 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_23[0]             | u_debug/pipeline_rst                       |               14 |             32 |         2.29 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_6[0]              | u_debug/pipeline_rst                       |               19 |             32 |         1.68 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_29[0]             | u_debug/pipeline_rst                       |               17 |             32 |         1.88 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_9[0]              | u_debug/pipeline_rst                       |               15 |             32 |         2.13 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_4[0]              | u_debug/pipeline_rst                       |               17 |             32 |         1.88 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_mem_wb_latch/wb_RegWrite_reg_24[0]             | u_debug/pipeline_rst                       |               16 |             32 |         2.00 |
+|  u_clk_wiz/inst/clk_out1 |                                                             | u_debug/pipeline_rst                       |                8 |             33 |         4.12 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/prog_we_i_1_n_0                                     | u_debug/u_uart_rx/sys_rst                  |                7 |             40 |         5.71 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/prog_we_reg_0                                       |                                            |               11 |             44 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/prog_addr_reg[9]_0                                  |                                            |               11 |             44 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/prog_we_reg_1                                       |                                            |               11 |             44 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 | u_debug/prog_addr_reg[8]_0                                  |                                            |               11 |             44 |         4.00 |
+|  u_clk_wiz/inst/clk_out1 |                                                             | u_debug/u_uart_rx/sys_rst                  |               16 |             47 |         2.94 |
+| ~u_clk_wiz/inst/clk_out1 |                                                             | u_debug/pipeline_rst                       |               28 |             64 |         2.29 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/u_ex_mem_latch/if_id_write_en                    | u_pipeline/u_ex_mem_latch/mem_Halt_reg_0   |               23 |             76 |         3.30 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/running                                          | u_debug/pipeline_rst                       |               42 |            105 |         2.50 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/running                                          | u_pipeline/u_ex_mem_latch/mem_zero_reg_0   |               64 |            169 |         2.64 |
+|  u_clk_wiz/inst/clk_out1 | u_pipeline/running                                          | u_pipeline/u_ex_mem_latch/mem_zero_i_1_n_0 |               99 |            251 |         2.54 |
++--------------------------+-------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+
+
